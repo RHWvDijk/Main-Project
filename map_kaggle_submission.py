@@ -4,6 +4,7 @@ import glob
 import pandas as pd
 from matplotlib.pyplot import imread
 from keras.models import model_from_json
+from keras import backend
 
 # directory to test data
 test_path = 'C:\\Users\\s167917\\Documents\\#School\\Jaar 3\\3 Project Imaging\\data\\test\\'
@@ -50,3 +51,4 @@ for file_name in file_names:
     # save your submission
     submission.head()
     submission.to_csv(file_name+".csv", index = False, header = True)
+    backend.clear_session()
