@@ -51,4 +51,6 @@ for file_name in file_names:
     # save your submission
     submission.head()
     submission.to_csv(file_name+".csv", index = False, header = True)
+    
+    # clear memory
     backend.clear_session()
