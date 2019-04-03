@@ -10,7 +10,7 @@ from keras import backend
 test_path = 'C:\\Users\\s167917\\Documents\\#School\\Jaar 3\\3 Project Imaging\\data\\test\\'
 
 # directory to the model and weights files (.json and .hdf5)
-file_path = 'C:\\Users\\s167917\\Documents\\#School\\Jaar 3\\3 Project Imaging\\GitHub\\code\\blocks_dropout\\'
+file_path = 'C:\\Users\\s167917\\Documents\\#School\\Jaar 3\\3 Project Imaging\\GitHub\\code\\blocks\\'
 
 # make list of all models
 file_names = glob.glob(file_path + '*.json')
