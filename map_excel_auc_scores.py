@@ -31,7 +31,7 @@ file_path = 'C:\\Users\\s167917\\Documents\\#School\\Jaar 3\\3 Project Imaging\\
 file_names = glob.glob(file_path + '*.json')
 model_names = []
 auc_scores = []
-
+avoid clutter from old models / layers
 for i in range(len(file_names)):
     file_name = os.path.splitext(file_names[i])[0]
     print(os.path.split(file_name)[1],end = '\t')
@@ -49,7 +49,7 @@ for i in range(len(file_names)):
     auc_scores.append(roc_auc_score(y_val,predictions))
     print(auc_scores[-1])
     
-    # clear memory
+    # avoid clutter from old models / layers
     backend.clear_session()
     
     # write to excel file (can be moved out of the loop, this prevents losing data when something goes wrong)
