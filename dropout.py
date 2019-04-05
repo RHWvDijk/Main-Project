@@ -1,5 +1,3 @@
-#tensorboard --logdir="C:\\Users\\s167917\\Documents\\#School\\Jaar 3\\3 Project Imaging\\GitHub\\code\\logs"
-#http://localhost:6006
 import os
 #import numpy as np
 from keras.models import Model
@@ -36,6 +34,7 @@ IMAGE_SIZE = 96
 input_shape = (IMAGE_SIZE, IMAGE_SIZE, 3)
 train_gen, val_gen = get_pcam_generators('C:\\Users\s167917\\Documents\\#School\\Jaar 3\\3 Project Imaging\\data')
 
+# loop over dropout values
 for i in range(20):
     input = Input(input_shape)
     pretrained = MobileNetV2(input_shape=input_shape, include_top=False, weights='imagenet')
@@ -51,7 +50,6 @@ for i in range(20):
     model.summary()
 
 #    print(model.non_trainable_weights)
-#    asd
 #    # save the model and weights
     model_name = 'MNV2_dropout_test_{:0.2f}'.format(i/20)
     print(model_name)
@@ -79,4 +77,5 @@ for i in range(20):
                         validation_steps=val_steps,
                         epochs=10,
                         callbacks=callbacks_list)
+    # avoid clutter from old models / layers
     backend.clear_session()
