@@ -52,5 +52,5 @@ for file_name in file_names:
     submission.head()
     submission.to_csv(file_name+".csv", index = False, header = True)
     
-    # clear memory
+    # avoid clutter from old models / layers
     backend.clear_session()
